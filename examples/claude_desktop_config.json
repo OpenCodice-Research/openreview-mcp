@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "openreview": {
+      "command": "openreview-mcp",
+      "env": {
+        "OPENREVIEW_USERNAME": "you@example.com",
+        "OPENREVIEW_PASSWORD": "your-openreview-password"
+      }
+    }
+  }
+}
