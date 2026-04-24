@@ -49,6 +49,11 @@ Returns clusters with top TF-IDF terms, three representative exemplar snippets p
 cluster, and the contributing submission ids. The consuming LLM (Claude) labels
 each cluster from the evidence, so no fixed taxonomy is baked into the server.
 
+See the [ICLR 2024 case study](examples/iclr2024_case_study.md) for a full
+reproducible analysis of 100 rejected submissions, and the blog post
+[*What ICLR reviewers actually complain about*](blog/2026-04-24-what-iclr-reviewers-actually-complain-about.md)
+for the narrative version.
+
 ## Configuration
 
 The server works out of the box for public venues. For access to venues requiring login:
