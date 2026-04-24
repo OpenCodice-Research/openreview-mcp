@@ -40,3 +40,14 @@ def first_signature(note: Any) -> str:
     """Return the first signature on a note (used as anonymized reviewer id)."""
     sigs = getattr(note, "signatures", None) or []
     return sigs[0] if sigs else "anonymous"
+
+
+def as_str_list(x: Any) -> list[str]:
+    """Normalize a content field that may be a string or list-of-strings."""
+    if x is None:
+        return []
+    if isinstance(x, str):
+        return [x] if x else []
+    if isinstance(x, list):
+        return [str(v) for v in x if v]
+    return [str(x)]

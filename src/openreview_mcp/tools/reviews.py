@@ -7,7 +7,7 @@ from typing import Any
 from ..cache import cached
 from ..client import OpenReviewClient
 from ..schemas import Decision, MetaReview, Rebuttal, Review
-from ._helpers import content_value, first_signature, float_or_none
+from ._helpers import as_str_list, content_value, first_signature, float_or_none
 
 
 def _is_invitation(note: Any, suffix: str) -> bool:
@@ -39,7 +39,7 @@ def get_reviews(client: OpenReviewClient, submission_id: str) -> list[dict[str, 
                 weaknesses=content_value(c, "weaknesses"),
                 questions=content_value(c, "questions"),
                 limitations=content_value(c, "limitations"),
-                ethics_flag=content_value(c, "flag_for_ethics_review"),
+                ethics_flags=as_str_list(content_value(c, "flag_for_ethics_review")),
                 cdate=getattr(n, "cdate", None),
             )
         )

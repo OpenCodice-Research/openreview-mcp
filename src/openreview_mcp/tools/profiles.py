@@ -34,12 +34,14 @@ def _extract_list(profile: Any, key: str) -> list[str]:
 def _extract_affiliations(profile: Any) -> list[str]:
     content = getattr(profile, "content", {}) or {}
     history = content.get("history", []) or []
-    out = []
+    seen: set[str] = set()
+    out: list[str] = []
     for h in history:
         if isinstance(h, dict):
             inst = h.get("institution") or {}
             name = inst.get("name") if isinstance(inst, dict) else None
-            if name:
+            if name and name not in seen:
+                seen.add(name)
                 out.append(name)
     return out
 

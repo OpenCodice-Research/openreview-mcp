@@ -64,7 +64,7 @@ class Review(BaseModel):
     weaknesses: str | None = None
     questions: str | None = None
     limitations: str | None = None
-    ethics_flag: str | None = None
+    ethics_flags: list[str] = Field(default_factory=list)
     cdate: int | None = None
 
 

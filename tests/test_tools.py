@@ -60,6 +60,7 @@ def test_get_reviews_extracts_scores(fake_client, make_note) -> None:
                 summary="They propose X.",
                 strengths="Clear writing.",
                 weaknesses="Limited experiments.",
+                flag_for_ethics_review=["No ethics review needed."],
             ),
         ),
         make_note(
@@ -74,6 +75,7 @@ def test_get_reviews_extracts_scores(fake_client, make_note) -> None:
     assert len(out) == 1
     assert out[0]["rating"] == 7.0
     assert out[0]["reviewer_id"] == "~Reviewer_aaa1"
+    assert out[0]["ethics_flags"] == ["No ethics review needed."]
 
 
 def test_get_decision_found(fake_client, make_note) -> None:
