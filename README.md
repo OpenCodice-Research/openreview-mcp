@@ -27,14 +27,27 @@ The academic MCP ecosystem covers arXiv (`academia-mcp`), Semantic Scholar, and 
 | `openreview_get_rebuttal` | Author responses to reviewers |
 | `openreview_get_decision` | Accept/reject decision and comment |
 | `openreview_get_profile` | Author profile, affiliation, publications |
+| `openreview_aggregate_weaknesses` | Cluster recurrent reviewer complaints across a venue's rejections (requires `[analysis]` extra) |
 
 ## Install
 
 ```bash
 pip install openreview-mcp
-# or
-uv add openreview-mcp
+# or, with the weakness-clustering tool enabled:
+pip install "openreview-mcp[analysis]"
 ```
+
+## Signature tool: `openreview_aggregate_weaknesses`
+
+Ask the server to cluster reviewer weakness themes across a venue's rejections:
+
+```text
+> Cluster 50 rejected ICLR 2024 submissions by weakness theme (k=10).
+```
+
+Returns clusters with top TF-IDF terms, three representative exemplar snippets per
+cluster, and the contributing submission ids. The consuming LLM (Claude) labels
+each cluster from the evidence, so no fixed taxonomy is baked into the server.
 
 ## Configuration
 

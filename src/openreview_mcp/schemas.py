@@ -112,3 +112,23 @@ class Profile(BaseModel):
     gscholar: str | None = None
     dblp: str | None = None
     orcid: str | None = None
+
+
+class WeaknessCluster(BaseModel):
+    """A cluster of semantically similar weakness statements."""
+
+    cluster_id: int
+    size: int
+    top_terms: list[str] = Field(default_factory=list)
+    exemplars: list[str] = Field(default_factory=list)
+    submission_ids: list[str] = Field(default_factory=list)
+
+
+class WeaknessAggregate(BaseModel):
+    """Aggregate analysis of weakness patterns across a venue's rejections."""
+
+    venue_id: str
+    n_submissions_sampled: int
+    n_weakness_texts: int
+    n_clusters: int
+    clusters: list[WeaknessCluster] = Field(default_factory=list)

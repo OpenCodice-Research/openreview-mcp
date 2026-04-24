@@ -26,12 +26,18 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+analysis = [
+    "scikit-learn>=1.4.0",
+    "numpy>=1.26.0",
+]
 dev = [
     "pytest>=8.0.0",
     "pytest-asyncio>=0.23.0",
     "vcrpy>=6.0.0",
     "ruff>=0.4.0",
     "mypy>=1.9.0",
+    "scikit-learn>=1.4.0",
+    "numpy>=1.26.0",
 ]
 
 [project.scripts]
@@ -57,6 +63,10 @@ target-version = "py311"
 select = ["E", "F", "I", "N", "W", "UP", "B", "SIM", "RUF"]
 ignore = ["E501"]
 
+[tool.ruff.lint.per-file-ignores]
+# sklearn idioms (X, sub_X, class aliases via tuple unpacking)
+"src/openreview_mcp/tools/analysis.py" = ["N806"]
+
 [tool.mypy]
 python_version = "3.11"
 strict = true
@@ -65,6 +75,10 @@ warn_unused_configs = true
 
 [[tool.mypy.overrides]]
 module = "diskcache"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["sklearn.*", "numpy", "numpy.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

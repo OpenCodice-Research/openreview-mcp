@@ -7,7 +7,7 @@ from typing import Any
 from mcp.server.fastmcp import FastMCP
 
 from .client import OpenReviewClient
-from .tools import profiles, reviews, submissions, venues
+from .tools import analysis, profiles, reviews, submissions, venues
 
 mcp = FastMCP("openreview-mcp")
 _client = OpenReviewClient()
@@ -102,3 +102,36 @@ def openreview_get_decision(submission_id: str) -> dict[str, Any] | None:
 def openreview_get_profile(profile_id_or_email: str) -> dict[str, Any]:
     """Fetch an OpenReview user profile by id (e.g. "~First_Last1") or email."""
     return profiles.get_profile(_client, profile_id_or_email=profile_id_or_email)
+
+
+# ---- Analysis ----
+
+
+@mcp.tool()
+def openreview_aggregate_weaknesses(
+    venue_id: str,
+    sample_size: int = 50,
+    n_clusters: int = 10,
+    only_rejected: bool = True,
+    min_text_length: int = 80,
+    seed: int = 42,
+) -> dict[str, Any]:
+    """Cluster recurrent reviewer-weakness themes across a venue's rejections.
+
+    Samples up to ``sample_size`` rejected submissions from ``venue_id``, extracts
+    the ``weaknesses`` section from each official review, and clusters them via
+    TF-IDF + MiniBatchKMeans. Returns clusters with top terms, representative
+    exemplars, and contributing submission ids. The consuming agent is expected
+    to synthesize human-readable labels from the evidence.
+
+    Requires the ``analysis`` extra: ``pip install openreview-mcp[analysis]``.
+    """
+    return analysis.aggregate_weaknesses(
+        _client,
+        venue_id=venue_id,
+        sample_size=sample_size,
+        n_clusters=n_clusters,
+        only_rejected=only_rejected,
+        min_text_length=min_text_length,
+        seed=seed,
+    )
