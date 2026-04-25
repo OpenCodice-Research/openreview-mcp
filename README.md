@@ -1,8 +1,10 @@
 # openreview-mcp
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19758460.svg)](https://doi.org/10.5281/zenodo.19758460)
+
 **MCP server for [OpenReview](https://openreview.net)** — search submissions, fetch reviews, meta-reviews, rebuttals, and decisions from NeurIPS, ICLR, ACL ARR, COLM, TMLR, and any other venue hosted on OpenReview.
 
-Built by [OpenCódice Research](https://github.com/OpenCodice-Research).
+Built by [OpenCódice Research](https://github.com/OpenCodice-Research). The design rationale, analysis pipeline, and ICLR 2024 case study are documented in the OpenCódice Technical Report **OC-TR-2026-007** ([Zenodo](https://zenodo.org/records/19758460), DOI [`10.5281/zenodo.19758460`](https://doi.org/10.5281/zenodo.19758460)).
 
 ## Why
 
