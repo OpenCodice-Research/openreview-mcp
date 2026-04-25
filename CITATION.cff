@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+title: "openreview-mcp: A Model Context Protocol Server for Querying Peer Review at Scale"
+message: "If you use this software, please cite the accompanying technical report."
+type: software
+authors:
+  - family-names: "Rodrigo-Ginés"
+    given-names: "Francisco-Javier"
+    affiliation: "OpenCódice Research"
+    orcid: "https://orcid.org/0000-0001-6235-6860"
+repository-code: "https://github.com/OpenCodice-Research/openreview-mcp"
+url: "https://github.com/OpenCodice-Research/openreview-mcp"
+license: MIT
+version: "0.1.0"
+date-released: "2026-04-25"
+identifiers:
+  - description: "Concept DOI for all versions of this software"
+    type: doi
+    value: "10.5281/zenodo.19758459"
+  - description: "DOI for version 0.1.0"
+    type: doi
+    value: "10.5281/zenodo.19758460"
+preferred-citation:
+  type: report
+  title: "openreview-mcp: A Model Context Protocol Server for Querying Peer Review at Scale"
+  authors:
+    - family-names: "Rodrigo-Ginés"
+      given-names: "Francisco-Javier"
+      affiliation: "OpenCódice Research"
+      orcid: "https://orcid.org/0000-0001-6235-6860"
+  year: 2026
+  month: 4
+  institution:
+    name: "OpenCódice Research"
+  number: "OC-TR-2026-007"
+  doi: "10.5281/zenodo.19758460"
+  url: "https://zenodo.org/records/19758460"
