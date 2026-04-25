@@ -50,9 +50,9 @@ cluster, and the contributing submission ids. The consuming LLM (Claude) labels
 each cluster from the evidence, so no fixed taxonomy is baked into the server.
 
 See the [ICLR 2024 case study](examples/iclr2024_case_study.md) for a full
-reproducible analysis of 100 rejected submissions, and the blog post
-[*What ICLR reviewers actually complain about*](blog/2026-04-24-what-iclr-reviewers-actually-complain-about.md)
-for the narrative version.
+reproducible analysis of 100 rejected submissions, and the launch post
+[*openreview-mcp: peer review as a queryable resource for LLMs*](blog/2026-04-24-openreview-mcp.md)
+for the design rationale and a narrative tour of the same data.
 
 ## Configuration
 
