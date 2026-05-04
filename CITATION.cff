@@ -5,11 +5,11 @@ type: software
 authors:
   - family-names: "Rodrigo-Ginés"
     given-names: "Francisco-Javier"
-    affiliation: "Universidad Nacional de Educación a Distancia (UNED), NLP & IR Group; OpenCódice Research"
+    affiliation: "OpenCódice Research"
     orcid: "https://orcid.org/0000-0001-6235-6860"
   - family-names: "Chamorro-Padial"
     given-names: "Jorge"
-    affiliation: "Universitat de Lleida, Dept. of Computer Engineering and Digital Design; OpenCódice Research"
+    affiliation: "OpenCódice Research"
     orcid: "https://orcid.org/0000-0002-6334-3786"
 repository-code: "https://github.com/OpenCodice-Research/openreview-mcp"
 url: "https://github.com/OpenCodice-Research/openreview-mcp"
@@ -29,11 +29,11 @@ preferred-citation:
   authors:
     - family-names: "Rodrigo-Ginés"
       given-names: "Francisco-Javier"
-      affiliation: "Universidad Nacional de Educación a Distancia (UNED), NLP & IR Group; OpenCódice Research"
+      affiliation: "OpenCódice Research"
       orcid: "https://orcid.org/0000-0001-6235-6860"
     - family-names: "Chamorro-Padial"
       given-names: "Jorge"
-      affiliation: "Universitat de Lleida, Dept. of Computer Engineering and Digital Design; OpenCódice Research"
+      affiliation: "OpenCódice Research"
       orcid: "https://orcid.org/0000-0002-6334-3786"
   year: 2026
   month: 4
